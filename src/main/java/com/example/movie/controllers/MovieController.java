@@ -24,7 +24,7 @@ public class MovieController {
     public String getAllMovies(Model model){
         List<Movie> movieList= (List<Movie>) movieRepository.findAll();
         model.addAttribute("movieList", movieList);
-        return "index";
+        return "movies";
     }
 //    @GetMapping("/movie/{imageName}/{id}") //kolla rätt länk.
 //    String getmovie(Model model, @PathVariable Long id){

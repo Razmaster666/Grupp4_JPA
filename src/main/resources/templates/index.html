@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<h1>Movies</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<table class="table table-striped">
+    <tr>
+        <th scope="col">Movie title</th>
+        <th scope="col">Image name</th>
+    </tr>
+    <tr th:each="movie : ${movieList}">
+        <td th:text="${movie.title}"></td>
+        <td th:text="${movie.imageName}"></td>
+        <td th:text="${movie.id}"></td>
+    </tr>
+</table>
+</body>

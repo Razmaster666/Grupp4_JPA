@@ -1,7 +1,5 @@
-INSERT INTO MOVIE (TITLE, IMAGE_NAME, GENRE, PRICE; DESCRIPTION)
-VALUES ('Buttman', 'buttman.jpg');
-
-
+INSERT INTO MOVIE (TITLE, IMAGE_NAME, GENRE, PRICE, DESCRIPTION)
+VALUES ('Avatar', 'avatar.jpg', );
 
 --movies.add(new Movie("Avatar", 150, "Sci-Fi", "Avatar.jpg",
 --"En före detta marinkårssoldat blir förälskad i en blåhyad krigare på en

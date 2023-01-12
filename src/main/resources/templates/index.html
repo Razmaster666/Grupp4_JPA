@@ -10,11 +10,20 @@
     <tr>
         <th scope="col">Movie title</th>
         <th scope="col">Image name</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Price</th>
+        <th scope="col">Description</th>
+        <th scope="col">ID</th>
     </tr>
     <tr th:each="movie : ${movieList}">
         <td th:text="${movie.title}"></td>
         <td th:text="${movie.imageName}"></td>
+        <td th:text="${movie.genre}"></td>
+        <td th:text="${movie.price}"></td>
+        <td th:text="${movie.description}"></td>
         <td th:text="${movie.id}"></td>
+
+        TITLE, IMAGE_NAME, GENRE, PRICE, DESCRIPTION
     </tr>
 </table>
 </body>

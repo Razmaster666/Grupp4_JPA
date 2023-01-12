@@ -5,12 +5,6 @@ import javax.persistence.*;
 @Entity
 public class Movie {
 
-    //    private String title;
-//    private int price;
-//
-//    private String genre;
-//    private String imageName;
-//    private String description;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

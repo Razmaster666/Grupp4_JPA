@@ -1,37 +1,47 @@
 package com.example.movie.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Snack {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String product;
-    private double snackPrice;
-
-    private String description;
+    long id;
+    @Column(name = "NAME")
+    private String name;
+    @Column(name = "IMAGE_NAME")
     private String imageName;
-
+    @Column(name = "PRICE")
+    private double price;
+    @Column(name = "DESCRIPTION")
+    private String description;
 
     public Snack() {
     }
 
-    public Snack(String product, double snackPrice, String imageName , String description ) {
-        this.product = product;
-        this.snackPrice = snackPrice;
+    public Snack(long id, String name, String imageName, String description, double price) {
+        this.id = id;
+        this.name = name;
+        this.imageName = imageName;
         this.description = description;
-        this.imageName= imageName;
+        this.price = price;
     }
 
-    public String getDescription() {
-        return description;
+    public long getId() {
+        return id;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getImageName() {
@@ -42,20 +52,20 @@ public class Snack {
         this.imageName = imageName;
     }
 
-    public String getProduct() {
-        return product;
+    public String getDescription() {
+        return description;
     }
 
-    public void setProduct(String product) {
-        this.product = product;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public double getSnackPrice() {
-        return snackPrice;
+    public double getPrice() {
+        return price;
     }
 
-    public void setSnackPrice(double snackPrice) {
-        this.snackPrice = snackPrice;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
 

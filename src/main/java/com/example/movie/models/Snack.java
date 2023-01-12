@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Snacks {
+public class Snack {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String product;
@@ -16,10 +16,10 @@ public class Snacks {
     private String imageName;
 
 
-    public Snacks() {
+    public Snack() {
     }
 
-    public Snacks(String product, double snackPrice,String imageName ,String description ) {
+    public Snack(String product, double snackPrice, String imageName , String description ) {
         this.product = product;
         this.snackPrice = snackPrice;
         this.description = description;

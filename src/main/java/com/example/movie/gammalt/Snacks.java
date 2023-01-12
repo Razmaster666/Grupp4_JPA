@@ -1,6 +1,6 @@
 //package com.example.movie.gammalt;
 //
-//public class Snacks {
+//public class Snack {
 //    private String product;
 //    private double snackPrice;
 //
@@ -8,10 +8,10 @@
 //    private String imageName;
 //
 //
-//    public Snacks() {
+//    public Snack() {
 //    }
 //
-//    public Snacks(String product, double snackPrice, String imageName , String description ) {
+//    public Snack(String product, double snackPrice, String imageName , String description ) {
 //        this.product = product;
 //        this.snackPrice = snackPrice;
 //        this.description = description;

@@ -27,7 +27,7 @@
 //    @GetMapping("/")
 //    String get(Model model) {
 //        List<Movie> movies = repository.getMovies();
-//        List<Snacks> snacks = repository2.getSnacks();
+//        List<Snack> snacks = repository2.getSnacks();
 //        model.addAttribute("movies", movies);
 //        model.addAttribute("snacks", snacks);
 //        return "index";
@@ -42,7 +42,7 @@
 //
 //    @GetMapping("/snacks/{imageName}")
 //    String getsnacks(Model model, @PathVariable String imageName){
-//        Snacks snack = repository2.getSnack(imageName);
+//        Snack snack = repository2.getSnack(imageName);
 //        model.addAttribute("snack", snack);
 //        return "detailsSnacks";
 //    }
@@ -56,7 +56,7 @@
 //    }
 //    @PostMapping("/cart/addSnack")
 //    public String addSnackToCart(@RequestParam String product) {
-//        Snacks snack = repository2.getSnack(product);
+//        Snack snack = repository2.getSnack(product);
 //        shoppingCart.addSnack(snack);
 //        System.out.println(snack.getProduct());
 //        return "redirect:/cart";

@@ -1,6 +1,7 @@
 //package com.example.movie.gammalt;
 //
 //import com.example.movie.models.Movie;
+//import com.example.movie.models.Snack;
 //import org.springframework.stereotype.Repository;
 //
 //import java.util.ArrayList;
@@ -8,7 +9,7 @@
 //
 //@Repository
 //public class ShoppingCart {
-//    private List<Snacks> cartSnacks;
+//    private List<Snack> cartSnacks;
 //    private List<Movie> cartMovies;
 //
 //
@@ -17,7 +18,7 @@
 //        this.cartMovies = new ArrayList<>();
 //    }
 //
-//    public void addSnack(Snacks snack) {
+//    public void addSnack(Snack snack) {
 //        this.cartSnacks.add(snack);
 //    }
 //
@@ -25,7 +26,7 @@
 //        this.cartMovies.add(movie);
 //    }
 //
-//    public List<Snacks> getSnacks() {
+//    public List<Snack> getSnacks() {
 //        return cartSnacks;
 //    }
 //

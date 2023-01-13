@@ -13,7 +13,6 @@
     <tr>
         <th scope="col"></th>
         <th scope="col">Movie title</th>
-
         <th scope="col">Genre</th>
         <th scope="col">Price</th>
         <th scope="col">Length</th>
@@ -22,7 +21,7 @@
 
     <tbody>
     <tr scope ="row" th:each="movie : ${movieList}">
-        <td><img th:src="'/images/' + ${movie.imageName}"></td>
+        <td><a th:href="'/movies/'+ ${movie.id}"><img th:src="'/images/' + ${movie.imageName}"></a></td>
         <td class="movieTitle" th:text="${movie.title}"></td>
         <td th:text="${movie.genre}"></td>
         <td th:text="${movie.price}"></td>

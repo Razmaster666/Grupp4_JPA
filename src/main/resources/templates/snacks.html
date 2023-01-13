@@ -19,7 +19,7 @@
     </thead>
 
     <tbody>
-    <tr scope ="row"  th:each="snack : ${snackList}">
+    <tr scope ="row" th:each="snack : ${snackList}">
         <td><img th:src="'/images/' + ${snack.imageName}"></td>
         <td th:text="${snack.name}"></td>
         <td th:text="${snack.price}"></td>

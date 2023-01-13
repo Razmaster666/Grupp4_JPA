@@ -1,6 +1,9 @@
 package com.example.movie.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,11 +15,23 @@ public class Customer {
     private Long id;
 
     @Column(name = "FIRST_NAME")
+    @NotBlank
+    @Size(max = 500)
     private String firstName;
+
     @Column(name = "LAST_NAME")
+    @NotBlank
+    @Size(max = 500)
     private String lastName;
+
+    @Email
+    @NotBlank
     @Column(name = "EMAIL")
     private String email;
+
+    @Column(name = "PASSSWORD")
+    @NotBlank
+    private String password;
 
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)

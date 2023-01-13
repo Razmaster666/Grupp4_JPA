@@ -1,6 +1,6 @@
 package com.example.movie.controllers;
 
-import com.example.movie.models.Movie;
+
 import com.example.movie.models.Snack;
 import com.example.movie.repositories.SnackRepository;
 import org.springframework.beans.factory.annotation.Autowired;

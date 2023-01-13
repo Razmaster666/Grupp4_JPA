@@ -17,9 +17,9 @@
 
     <div class="poster">
       <a th:href= "'/movies/'+ ${movie.id}"> <img th:src="'/images/' + ${movie.imageName} "></a>
-    </div>
+
     <span><p th:text="${movie.title}"></p></span>
-  </div>
+    </div>
 </div>
 </table>
 
@@ -30,7 +30,7 @@
   <div class="movieMenu" th:each="snack : ${snacks}">
 
     <div class="poster">
-      <a th:href= "'/snack/'+ ${snack.id}"> <img th:src="'/images/' + ${snack.imageName} "></a>
+      <a th:href= "'/snacks/'+ ${snack.id}"> <img th:src="'/images/' + ${snack.imageName} "></a>
     </div>
     <p th:text="${snack.name}"></p>
   </div>

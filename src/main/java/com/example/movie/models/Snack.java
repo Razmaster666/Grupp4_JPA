@@ -7,7 +7,8 @@ public class Snack {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
+    Long id;
+
     @Column(name = "NAME")
     private String name;
     @Column(name = "IMAGE_NAME")
@@ -20,7 +21,7 @@ public class Snack {
     public Snack() {
     }
 
-    public Snack(long id, String name, String imageName, String description, double price) {
+    public Snack(Long id, String name, String imageName, String description, double price) {
         this.id = id;
         this.name = name;
         this.imageName = imageName;
@@ -28,11 +29,11 @@ public class Snack {
         this.price = price;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -52,14 +53,6 @@ public class Snack {
         this.imageName = imageName;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public double getPrice() {
         return price;
     }
@@ -68,5 +61,11 @@ public class Snack {
         this.price = price;
     }
 
+    public String getDescription() {
+        return description;
+    }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

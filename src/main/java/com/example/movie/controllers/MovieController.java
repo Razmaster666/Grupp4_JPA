@@ -20,7 +20,7 @@ public class MovieController {
     // ShoppingCart till ArrayList. Leva i minnet till en http session.
     // ShoppingCart måste vara specifik för varje användare.
 
-    @GetMapping("/all")
+    @GetMapping("")
     public String getAllMovies(Model model){
         List<Movie> movieList= (List<Movie>) movieRepository.findAll();
         model.addAttribute("movieList", movieList);

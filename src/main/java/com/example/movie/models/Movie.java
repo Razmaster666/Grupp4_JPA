@@ -7,7 +7,8 @@ public class Movie {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
+
     @Column(name = "TITLE")
     private String title;
     @Column(name = "IMAGE_NAME")
@@ -22,7 +23,7 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(long id, String title, String imageName, String genre, int price, String description) {
+    public Movie(Long id, String title, String imageName, String genre, int price, String description) {
         this.id = id;
         this.title = title;
         this.imageName = imageName;
@@ -31,11 +32,11 @@ public class Movie {
         this.description = description;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -78,4 +79,5 @@ public class Movie {
     public void setDescription(String description) {
         this.description = description;
     }
+
 }

@@ -10,14 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@Controller
+
 @RequestMapping("/snacks")
+@Controller
 public class SnackController {
 
     @Autowired
     SnackRepository snackRepository;
 
-    @GetMapping("/all")
+    @GetMapping("")
     public String getAllSnacks(Model model){
         List<Snack> snackList= (List<Snack>) snackRepository.findAll();
         model.addAttribute("snackList", snackList);

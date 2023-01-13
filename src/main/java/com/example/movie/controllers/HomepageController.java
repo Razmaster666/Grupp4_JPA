@@ -8,9 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
-//@RequestMapping("/homePage")
+@RequestMapping("/homePage")
 @Controller
 public class HomepageController {
 
@@ -19,7 +20,7 @@ public class HomepageController {
     @Autowired
     SnackRepository snackRepository;
 
-    @GetMapping("/")
+    @GetMapping("")
     String getAll(Model model){
         List<Movie> movieList= (List<Movie>) movieRepository.findAll();
         List<Snack> snackList= (List<Snack>) snackRepository.findAll();

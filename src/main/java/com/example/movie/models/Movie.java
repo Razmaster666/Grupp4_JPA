@@ -22,6 +22,8 @@ public class Movie {
     private int price;
     @Column(name = "DESCRIPTION")
     private String description;
+    @Column(name = "MOVIE_LENGTH")
+    private String length;
     @Column(name = "RELEASE", columnDefinition = "DATE")
     private LocalDate release;
 
@@ -31,13 +33,14 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(Long id, String title, String imageName, String genre, int price, String description, LocalDate release) {
+    public Movie(Long id, String title, String imageName, String genre, int price, String description, String length, LocalDate release) {
         this.id = id;
         this.title = title;
         this.imageName = imageName;
         this.genre = genre;
         this.price = price;
         this.description = description;
+        this.length = length;
         this.release = release;
     }
 
@@ -87,6 +90,14 @@ public class Movie {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getLength() {
+        return length;
+    }
+
+    public void setLength(String length) {
+        this.length = length;
     }
 
     public LocalDate getRelease() {

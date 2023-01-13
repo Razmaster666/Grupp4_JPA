@@ -7,9 +7,8 @@
 
 <h2 class="tableTitle">Customer form</h2>
 
+<div class="container">
 <form action="/customers/save" th:object="${customer}" method="POST">
-
-    <!--    <div class="form-group mx-sm-3 mb-2">-->
 
     <div class="form-row">
         <div class="form-group col-md-4">
@@ -21,7 +20,7 @@
     </div>
 
     <div class="form-group col-md-4">
-        <input type="email" class="form-control" th:field="*{email}" id="inputEmail" placeholder="1234 Main St">
+        <input type="email" class="form-control" th:field="*{email}" id="inputEmail" placeholder="Email">
     </div>
     <div class="form-group col-md-4">
         <input type="password" class="form-control" id="inputPassword" placeholder="Lösenord">
@@ -32,5 +31,6 @@
     <button type="submit" class="btn btn-success">Registrera</button>
 
 </form>
+</div>
 
 </body>

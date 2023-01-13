@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<h2 class="tableTitle">Purchases</h2>
+
+<table class="table table-striped table-dark align-middle container">
+    <thead>
+    <tr>
+        <th>Customer ID</th>
+        <th>Movie ID</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="purchase : ${purchaseList}">
+        <td th:text="${purchase.customer}"></td>
+        <td th:text="${purchase.movie}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>

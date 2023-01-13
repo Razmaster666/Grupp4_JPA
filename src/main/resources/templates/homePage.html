@@ -10,17 +10,17 @@
 <table class="table table-striped table-dark align-middle container">
 
 
-<h2 class="snackMovie">Filmer</h2>
+  <h2 class="snackMovie">Filmer</h2>
 
-<div class="Panel">
-  <div class="movieMenu" th:each="movie : ${movies}">
+  <div class="Panel">
+    <div class="movieMenu" th:each="movie : ${movies}">
 
-    <div class="poster">
-      <a th:href= "'/movies/'+ ${movie.id}"> <img th:src="'/images/' + ${movie.imageName} "></a>
-
-    <span><p th:text="${movie.title}"></p></span>
+      <div class="poster">
+        <a th:href= "'/movies/'+ ${movie.id}"> <img class="homePageImage"  th:src="'/images/' + ${movie.imageName} "></a>
+      </div>
+      <span><p th:text="${movie.title}"></p></span>
     </div>
-</div>
+  </div>
 </table>
 
 <h2 class="snackMovie">Snacks</h2>
@@ -30,7 +30,7 @@
   <div class="movieMenu" th:each="snack : ${snacks}">
 
     <div class="poster">
-      <a th:href= "'/snacks/'+ ${snack.id}"> <img th:src="'/images/' + ${snack.imageName} "></a>
+      <a th:href= "'/snacks/'+ ${snack.id}"> <img class="homePageImage"  th:src="'/images/' + ${snack.imageName} "></a>
     </div>
     <p th:text="${snack.name}"></p>
   </div>

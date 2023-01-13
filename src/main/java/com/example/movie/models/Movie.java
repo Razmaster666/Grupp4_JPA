@@ -1,6 +1,9 @@
 package com.example.movie.models;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Movie {
@@ -19,17 +22,23 @@ public class Movie {
     private int price;
     @Column(name = "DESCRIPTION")
     private String description;
+    @Column(name = "RELEASE", columnDefinition = "DATE")
+    private LocalDate release;
+
+    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
+    private List<Purchase> purchaseList = new ArrayList<>();
 
     public Movie() {
     }
 
-    public Movie(Long id, String title, String imageName, String genre, int price, String description) {
+    public Movie(Long id, String title, String imageName, String genre, int price, String description, LocalDate release) {
         this.id = id;
         this.title = title;
         this.imageName = imageName;
         this.genre = genre;
         this.price = price;
         this.description = description;
+        this.release = release;
     }
 
     public Long getId() {
@@ -80,4 +89,11 @@ public class Movie {
         this.description = description;
     }
 
+    public LocalDate getRelease() {
+        return release;
+    }
+
+    public void setRelease(LocalDate release) {
+        this.release = release;
+    }
 }

@@ -8,3 +8,5 @@ INSERT INTO SNACK (NAME, IMAGE_NAME, PRICE, DESCRIPTION) VALUES ('Popcorn', 'pop
 INSERT INTO SNACK (NAME, IMAGE_NAME, PRICE, DESCRIPTION) VALUES ('Chips', 'chips.jpg', 19.99, 'Saltade Potatischips är släta chips med lätt och härlig sälta som lyfter den goda potatisen till skyarna. De klassiska tunna chipsen är extra krispiga samtidigt som de nästan smälter i munnen.')
 
 INSERT INTO CUSTOMER (FIRST_NAME, LAST_NAME, EMAIL) VALUES ('Robert', 'Broberg', 'robert.broberg@gmail.com')
+
+INSERT INTO PURCHASE (CUSTOMER_ID, MOVIE_ID) VALUES (1, 4)

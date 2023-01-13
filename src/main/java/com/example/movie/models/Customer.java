@@ -1,6 +1,8 @@
 package com.example.movie.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Customer {
@@ -16,14 +18,18 @@ public class Customer {
     @Column(name = "EMAIL")
     private String email;
 
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<Purchase> purchaseList = new ArrayList<>();
+
     public Customer() {
     }
 
-    public Customer(Long id, String firstName, String lastName, String email) {
+    public Customer(Long id, String firstName, String lastName, String email, List<Purchase> purchaseList) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.purchaseList = purchaseList;
     }
 
     public Long getId() {
@@ -56,5 +62,13 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Purchase> getPurchaseList() {
+        return purchaseList;
+    }
+
+    public void setPurchaseList(List<Purchase> purchaseList) {
+        this.purchaseList = purchaseList;
     }
 }

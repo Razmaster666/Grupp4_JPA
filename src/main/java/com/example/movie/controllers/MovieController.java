@@ -28,7 +28,7 @@ public class MovieController {
         return "movies";
     }
 
-    @GetMapping("/{id}") //kolla rätt länk.
+    @GetMapping("/{id}")
     String getmovie(Model model, @PathVariable Long id){
         Movie movie = movieRepository.findById(id).get();
         model.addAttribute("movie",movie);

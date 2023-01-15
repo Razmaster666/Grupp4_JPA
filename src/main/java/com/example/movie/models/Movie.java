@@ -2,6 +2,7 @@ package com.example.movie.models;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,14 +18,15 @@ public class Movie {
     @Column(name = "IMAGE_NAME")
     private String imageName;
     @Column(name = "GENRE")
-    private String genre;
+    @Enumerated(EnumType.STRING)
+    private MovieGenre genre;
     @Column(name = "PRICE")
     private int price;
     @Column(name = "DESCRIPTION")
     private String description;
     @Column(name = "MOVIE_LENGTH")
-    private String length;
-    @Column(name = "RELEASE", columnDefinition = "DATE")
+    private LocalTime length;
+    @Column(name="RELEASE")
     private LocalDate release;
 
     @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
@@ -33,7 +35,7 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(Long id, String title, String imageName, String genre, int price, String description, String length, LocalDate release) {
+    public Movie(Long id, String title, String imageName, MovieGenre genre, int price, String description, LocalTime length, LocalDate release, List<Purchase> purchaseList) {
         this.id = id;
         this.title = title;
         this.imageName = imageName;
@@ -42,6 +44,7 @@ public class Movie {
         this.description = description;
         this.length = length;
         this.release = release;
+        this.purchaseList = purchaseList;
     }
 
     public Long getId() {
@@ -68,11 +71,11 @@ public class Movie {
         this.imageName = imageName;
     }
 
-    public String getGenre() {
+    public MovieGenre getGenre() {
         return genre;
     }
 
-    public void setGenre(String genre) {
+    public void setGenre(MovieGenre genre) {
         this.genre = genre;
     }
 
@@ -92,11 +95,11 @@ public class Movie {
         this.description = description;
     }
 
-    public String getLength() {
+    public LocalTime getLength() {
         return length;
     }
 
-    public void setLength(String length) {
+    public void setLength(LocalTime length) {
         this.length = length;
     }
 
@@ -107,4 +110,14 @@ public class Movie {
     public void setRelease(LocalDate release) {
         this.release = release;
     }
+
+    public List<Purchase> getPurchaseList() {
+        return purchaseList;
+    }
+
+    public void setPurchaseList(List<Purchase> purchaseList) {
+        this.purchaseList = purchaseList;
+    }
+
+
 }

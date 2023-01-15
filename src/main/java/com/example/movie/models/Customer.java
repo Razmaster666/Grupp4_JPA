@@ -15,24 +15,22 @@ public class Customer {
     private Long id;
 
     @Column(name = "FIRST_NAME")
-    @NotBlank
-    @Size(max = 500)
+    @NotBlank (message = "Du måste fylla i ett förnamn")
+    @Size(max = 64, message = "Förnamnet får inte vara längre än 64 tecken")
     private String firstName;
 
     @Column(name = "LAST_NAME")
-    @NotBlank
-    @Size(max = 500)
+    @NotBlank(message = "Du måste fylla i ett efternamn")
+    @Size(max = 64, message = "Efternamnet får inte vara längre än 64 tecken")
     private String lastName;
 
-    @Email
-    @NotBlank
     @Column(name = "EMAIL")
+    @NotBlank(message = "Du måste fylla i en e-postadress")
+    @Email(message = "Ogiltig e-postadress")
     private String email;
 
-    @Column(name = "PASSSWORD")
-    @NotBlank
+    @Column(name = "PASSWORD")
     private String password;
-
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<Purchase> purchaseList = new ArrayList<>();
@@ -40,11 +38,12 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Long id, String firstName, String lastName, String email, List<Purchase> purchaseList) {
+    public Customer(Long id, String firstName, String lastName, String email, String password, List<Purchase> purchaseList) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.password = password;
         this.purchaseList = purchaseList;
     }
 
@@ -78,6 +77,14 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public List<Purchase> getPurchaseList() {

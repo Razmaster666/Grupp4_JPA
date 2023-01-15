@@ -11,6 +11,7 @@ public class Purchase {
 
     @ManyToOne
     private Customer customer;
+
     @ManyToOne
     private Movie movie;
 
@@ -45,14 +46,5 @@ public class Purchase {
 
     public void setMovie(Movie movie) {
         this.movie = movie;
-    }
-
-    @Override
-    public String toString() {
-        return "Purchase{" +
-                "id=" + id +
-                ", customer=" + customer +
-                ", movie=" + movie +
-                '}';
     }
 }

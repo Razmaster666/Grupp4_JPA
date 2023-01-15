@@ -9,16 +9,58 @@ img{
   border-radius: 3px;
 }
 
-.nav{
-    --bs-nav-link-hover-color: black;
+table {
+    table-layout: fixed
 }
 
-.nav-link{
-    color: antiquewhite;
-    font-weight: 700;
-    font-size: 80%;
-    text-transform: uppercase;
+p{
+     color: antiquewhite;
 }
+
+h2 {
+       color: antiquewhite;
+}
+
+.nav{
+    --bs-nav-link-hover-color: snow;
+     opacity: 1;
+}
+
+.nav-link {
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: snow;
+  padding: 20px 0px;
+  margin: 0px 20px;
+  display: inline-block;
+  position: relative;
+  opacity: 0.8;
+}
+
+.nav-link:hover {
+opacity: 1;
+}
+
+.nav-link::before {
+  transition: 150ms;
+  height: 5px;
+  content: "";
+  position: absolute;
+  background-color: white;
+}
+
+.nav-link-grow-up::before {
+  height: 0%;
+  width: 100%;
+  bottom: 0px;
+}
+
+.nav-link-grow-up:hover::before {
+  height: 5px;
+}
+
 
 .navLogo{
   width: 40px;
@@ -79,6 +121,7 @@ button {
      -ms-transition: all 0.3s ease;
      transition: all 0.3s ease;
    }
+
    .movieMenu{
    display: inline-block;
    text-align: center;
@@ -104,14 +147,16 @@ button {
 
    }
 
-   p{
-     color: antiquewhite;
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
-   }
-
-   h2 {
-       color: antiquewhite;
-   }
+.errorMsg {
+  display:block;
+  color: #ff4d4d;
+  animation: fadeIn 0.5s;
+}
 
 
 

@@ -22,7 +22,7 @@
     <tbody>
         <td><img th:src="'/images/' + ${movie.imageName}"></td>
         <td class="movieTitle" th:text="${movie.title}"></td>
-        <td th:text="${movie.genre}"></td>
+        <td th:text="${movie.genre.displayGenre}"></td>
         <td th:text="${movie.price}"></td>
         <td th:text="${movie.description}"></td>
     </tr>

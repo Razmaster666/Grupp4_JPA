@@ -19,8 +19,6 @@ public class MovieController {
     // ShoppingCart till ArrayList. Leva i minnet till en http session.
     // ShoppingCart måste vara specifik för varje användare.
 
-    //
-
     @GetMapping("")
     public String getAllMovies(Model model,
                                @RequestParam (required = false, value = "sortBy") String sortBy,
@@ -51,15 +49,33 @@ public class MovieController {
 
         // Kommande filmer:
 
-        else if(!isCurrent) {
-            movieList = (List<Movie>) movieRepository.getUpcomingMovies(); // Native query method
-            pageTitle ="Kommande filmer";
+        else if(!isCurrent && sortBy == null){
+            movieList = (List<Movie>) movieRepository.getUpcomingMovies();
             helper = false;
+            pageTitle = "Kommande filmer";
+        }
+        else if(!isCurrent && sortBy.equals("action")) {
+            movieList = (List<Movie>) movieRepository.getUpcomingMoviesByGenre("ACTION");
+            helper = false;
+            pageTitle = "Kommande filmer";
+        }
+        else if(!isCurrent && sortBy.equals("komedi")) {
+            movieList = (List<Movie>) movieRepository.getUpcomingMoviesByGenre("COMEDY");
+            helper = false;
+            pageTitle = "Kommande filmer";
+        }
+        else if(!isCurrent && sortBy.equals("scifi")) {
+            movieList = (List<Movie>) movieRepository.getUpcomingMoviesByGenre("SCIFI");
+            helper = false;
+            pageTitle = "Kommande filmer";
+        }
+        else if(!isCurrent && sortBy.equals("barn")) {
+            movieList = (List<Movie>) movieRepository.getUpcomingMoviesByGenre("CHILDREN");
+            helper = false;
+            pageTitle = "Kommande filmer";
         }
 
-        else{
-            movieList = (List<Movie>) movieRepository.getCurrentMovies();
-        }
+        else movieList = movieList = (List<Movie>) movieRepository.findAll();
 
         model.addAttribute("movieList", movieList);
         model.addAttribute("pageTitle", pageTitle);
@@ -68,19 +84,13 @@ public class MovieController {
         return "movies";
     }
 
-//    @PostMapping("/order")
-//    public String getAllMoviesByRelease(Model model){
-//        List<Movie> movieList= (List<Movie>) movieRepository.findAllByOrderByRelease();
-//        model.addAttribute("movieList", movieList);
-//        return "movies";
-//    }
-
     @GetMapping("/{id}")
     String getmovie(Model model, @PathVariable Long id){
         Movie movie = movieRepository.findById(id).get();
         model.addAttribute("movie",movie);
         return "detailsMovie";
     }
+
 
 
 

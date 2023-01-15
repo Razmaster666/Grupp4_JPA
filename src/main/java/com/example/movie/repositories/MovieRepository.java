@@ -12,10 +12,12 @@ public interface MovieRepository extends CrudRepository<Movie, Long> {
 
     List<Movie> findAllByOrderByGenre();
 
-//    SELECT * FROM geeksforgeeks WHERE Deliver > GETDATE();
 
     @Query(value = "SELECT * FROM MOVIE WHERE RELEASE <= CURRENT_DATE AND GENRE = ?1", nativeQuery = true)
     List<Movie> getCurrentMoviesByGenre(String genre);
+
+    @Query(value = "SELECT * FROM MOVIE WHERE RELEASE > CURRENT_DATE AND GENRE = ?1", nativeQuery = true)
+    List<Movie> getUpcomingMoviesByGenre(String genre);
 
 //    @Query(value = "SELECT e FROM MOVIE e WHERE e.release > CURRENT_DATE")
 //    List<Movie> getUpcomingMovies();

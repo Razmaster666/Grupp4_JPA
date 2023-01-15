@@ -123,6 +123,15 @@ button:hover {
     /* --bs-btn-disabled-border-color: #0d6efd; */
 }
 
+    .btnTbl{
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .btnTbl td{
+        padding: 10px;
+    }
+
    .homePageImage {
       width: 280px;
       height: 420px;

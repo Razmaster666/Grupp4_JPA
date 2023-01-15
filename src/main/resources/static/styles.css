@@ -88,7 +88,6 @@ button {
     border-style: solid;
     border-width: 0.5px;
     border-radius: 8px;
-    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
     box-sizing: border-box;
     color:antiquewhite;
     font-size: 12px;
@@ -99,13 +98,30 @@ button {
     cursor: pointer;
 }
 
-    button:hover {
+button:hover {
       background-image: linear-gradient(144deg,#1b1b1b, #151515 50%,#000000);
     }
 
    button:active {
      background-image: linear-gradient(144deg,rgb(36, 35, 35), #282828 50%,#2b2b2b);
    }
+
+.btn-primary {
+    --bs-btn-color: #fff; !important
+    --bs-btn-bg: #0d6efd; !important
+    --bs-btn-border-color: #000000; !important
+    --bs-btn-hover-color: #fff; !important
+    --bs-btn-hover-bg: #0b5ed7; !important
+    /* --bs-btn-hover-border-color: #0a58ca; */
+    /* --bs-btn-focus-shadow-rgb: 49,132,253; */
+    /* --bs-btn-active-color: #fff; */
+    /* --bs-btn-active-bg: #0a58ca; */
+    /* --bs-btn-active-border-color: #0a53be; */
+    /* --bs-btn-active-shadow: inset 0 3px 5pxrgba(0, 0, 0, 0.125); */
+    --bs-btn-disabled-color: #fff; !important
+    /* --bs-btn-disabled-bg: #0d6efd; */
+    /* --bs-btn-disabled-border-color: #0d6efd; */
+}
 
    .homePageImage {
       width: 280px;

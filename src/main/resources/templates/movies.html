@@ -21,9 +21,11 @@
     </thead>
 
     <div th:if="${helper}">
-    <a href="/movies?current=true&sortBy=action"><p>Action</p></a>
-    <a href="/movies?current=true&sortBy=barn"><p>Barn</p></a>
-    <a href="/movies?current=true&sortBy=scifi"><p>Science Fiction</p></a>
+        <a href="/movies?current=true&sortBy=action"><button type="button" class="btn btn-primary">Action</button></a>
+        <a href="/movies?current=true&sortBy=komedi"><p>Komedi</p></a>
+        <a href="/movies?current=true&sortBy=scifi"><p>Science Fiction</p></a>
+        <a href="/movies?current=true&sortBy=barn"><p>Barn</p></a>
+
     </div>
 
     <tbody>
@@ -39,7 +41,7 @@
 
 </table>
 <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-    <a th:href="'/homePage'"><button class="startSida">Startsida</button></a>
+    <a th:href="'/homePage'"><button>Startsida</button></a>
 </div>
 
 </body>

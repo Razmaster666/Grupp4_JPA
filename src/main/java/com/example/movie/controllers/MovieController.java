@@ -39,7 +39,7 @@ public class MovieController {
         else if(isCurrent && sortBy.equals("action")) {
             movieList = (List<Movie>) movieRepository.getCurrentMoviesByGenre("ACTION");
         }
-        else if(isCurrent && sortBy.equals("comedy")) {
+        else if(isCurrent && sortBy.equals("komedi")) {
             movieList = (List<Movie>) movieRepository.getCurrentMoviesByGenre("COMEDY");
         }
         else if(isCurrent && sortBy.equals("scifi")) {

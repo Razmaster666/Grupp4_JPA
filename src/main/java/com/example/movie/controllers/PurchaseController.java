@@ -1,12 +1,13 @@
 package com.example.movie.controllers;
 
+import com.example.movie.models.Movie;
 import com.example.movie.models.Purchase;
+import com.example.movie.repositories.MovieRepository;
 import com.example.movie.repositories.PurchaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,8 +15,11 @@ import java.util.List;
 @Controller
 public class PurchaseController {
 
+
     @Autowired
     PurchaseRepository purchaseRepository;
+    @Autowired
+    MovieRepository movieRepository;
 
     @GetMapping("")
     public String getAllPurchases(Model model){
@@ -24,4 +28,28 @@ public class PurchaseController {
         return "purchases";
     }
 
+    @PostMapping("/addToCart")
+    public String savePurchase(Model model){
+        Movie movie = new Movie();
+        Purchase purchase = new Purchase();
+        purchase.setMovie(movie);
+        purchaseRepository.save(purchase);
+        return "purchases";
+    }
+
+
+//    @GetMapping("/buy")
+//    public String test(Model model) {
+//        model.addAttribute("movie", new Movie());
+//        model.addAttribute("purchase", new Purchase());
+//        return "buy";
+//    }
+//
+//    @PostMapping("/buy")
+//    public String test2(@ModelAttribute Purchase purchase, @RequestParam(value="id") Long id) {
+//        Movie movie = movieRepository.findById(id).get();
+//        purchase.setMovie(movie);
+//        purchaseRepository.save(purchase);
+//        return "buy";
+//    }
 }

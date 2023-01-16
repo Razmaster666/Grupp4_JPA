@@ -12,7 +12,6 @@ public interface MovieRepository extends CrudRepository<Movie, Long> {
 
     List<Movie> findAllByOrderByGenre();
 
-
     @Query(value = "SELECT * FROM MOVIE WHERE RELEASE <= CURRENT_DATE AND GENRE = ?1", nativeQuery = true)
     List<Movie> getCurrentMoviesByGenre(String genre);
 

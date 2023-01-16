@@ -4,11 +4,7 @@ public enum MovieGenre {
     ACTION ("Action"),
     SCIFI ("Science Fiction"),
     CHILDREN ("Barn & Familj"),
-    COMEDY ("Komedi"),
-    DRAMA ("Drama"),
-    HORROR ("Skräck"),
-    DOCUMENTARY ("Dokumentär"),
-    THRILLER ("Thriller");
+    COMEDY ("Komedi");
 
     private final String displayGenre;
 

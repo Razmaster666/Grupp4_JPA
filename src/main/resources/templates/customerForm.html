@@ -10,8 +10,6 @@
 <div class="container">
     <form action="/customers/add" th:object="${customer}" method="POST">
 
-        <!--<p th:text="${errorMsg}" class="errorMsg"></p>-->
-
         <p th:errors="*{firstName}" class="errorMsg"></p>
         <div class="form-row">
             <div class="form-group col-md-4">
@@ -42,6 +40,7 @@
         <!--    </div>-->
 
         <input th:field="*{id}" th:if="${id != null}" type="hidden">
+
         <br>
         <button type="submit" class="btn btn-success">Registrera</button>
 

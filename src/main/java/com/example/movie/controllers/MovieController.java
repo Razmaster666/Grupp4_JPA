@@ -1,6 +1,8 @@
 package com.example.movie.controllers;
 
+import com.example.movie.models.Customer;
 import com.example.movie.models.Movie;
+import com.example.movie.repositories.CustomerRepository;
 import com.example.movie.repositories.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +17,8 @@ public class MovieController {
 
     @Autowired
     MovieRepository movieRepository;
+    @Autowired
+    CustomerRepository customerRepository;
 
     // ShoppingCart till ArrayList. Leva i minnet till en http session.
     // ShoppingCart måste vara specifik för varje användare.
@@ -29,8 +33,7 @@ public class MovieController {
         String pageTitle = "På bio just nu";
         List<Movie> movieList;
 
-        // På bio just nu:
-
+        // PÅ BIO JUST NU
         if(isCurrent && sortBy == null){
             movieList = (List<Movie>) movieRepository.getCurrentMovies();
         }
@@ -47,8 +50,7 @@ public class MovieController {
             movieList = (List<Movie>) movieRepository.getCurrentMoviesByGenre("CHILDREN");
         }
 
-        // Kommande filmer:
-
+        // KOMMANDE FILMER
         else if(!isCurrent && sortBy == null){
             movieList = (List<Movie>) movieRepository.getUpcomingMovies();
             helper = false;
@@ -89,6 +91,12 @@ public class MovieController {
         Movie movie = movieRepository.findById(id).get();
         model.addAttribute("movie",movie);
         return "detailsMovie";
+    }
+
+    @ModelAttribute
+    public void findCurrentCustomer(Model model, Customer currentCustomer) {
+        currentCustomer = customerRepository.findById(1L).get();
+        model.addAttribute("currentCustomer", currentCustomer);
     }
 
 

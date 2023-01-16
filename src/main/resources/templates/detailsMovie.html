@@ -32,14 +32,16 @@
         <td>
             <a  th:href="'/purchases/addToCart/?type=movie&id=' + ${movie.id}"><button type="button" class="btn btn-success">Köp biljett</button></a>
         </td>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-            <a th:href="'/homePage'"><button class="startSida">Startsida</button></a>
-        </div>
+
     </tr>
 
     </tbody>
 
 </table>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+    <a th:href="'/homePage'"><button class="startSida">Startsida</button></a>
+</div>
 
 </body>
 </html>

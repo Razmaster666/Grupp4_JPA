@@ -48,7 +48,7 @@
         <td><a th:href="'/movies/'+ ${movie.id}"><img th:src="'/images/' + ${movie.imageName}"></a></td>
         <td class="movieTitle" th:text="${movie.title}"></td>
         <td th:text="${movie.genre.displayGenre}"></td>
-        <td class="premiere" th:if="${movie.release} == ${today}">Premiär idag!</td>
+        <td style="color: #00ffbf"  class="premiere" th:if="${movie.release} == ${today}">Premiär idag!</td>
         <td th:if="${movie.release} != ${today}" th:text="${movie.release}"></td>
         <td>
 <!--            <form action="purchases/addToCart" th:value="${movie}" method="POST">-->

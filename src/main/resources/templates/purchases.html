@@ -5,16 +5,18 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<h2 class="tableTitle">Purchases</h2>
+<h2 class="tableTitle">Varukorg</h2>
 
-<table class="table table-striped table-dark align-middle container">
+<p th:unless="${purchaseList} and ${purchaseList.size()}">Varukorgen är tom :(</p>
 
-    <p th:text="${count}"></p>
+<table th:if="${purchaseList} and ${purchaseList.size()}" class="table table-striped table-dark align-middle container">
+
+    <p th:text="${total}"></p>
 
     <thead>
     <tr>
         <th>Purchase ID</th>
-        <th>Produkter</th>
+        <th>Customer Name</th>
         <th>Customer ID</th>
         <th>Movie Title</th>
         <th>Movie ID</th>
@@ -36,7 +38,7 @@
             <span th:text="${purchase.snack.id}"></span>
         </td>
     </tr>
-
+    <a th:href="'/homePage'"><button class="startSida">Startsida</button></a>
     </tbody>
 </table>
 <div class="d-grid gap-2 d-md-flex justify-content-md-center">

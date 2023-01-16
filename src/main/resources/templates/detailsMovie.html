@@ -12,10 +12,11 @@
     <thead>
     <tr>
         <th></th>
-        <th>Movie title</th>
+        <th>Titel</th>
         <th>Genre</th>
-        <th>Price</th>
-        <th>Description</th>
+        <th>Biljettpris</th>
+        <th>Releasedatum</th>
+        <th>Beskrivning</th>
         <th></th>
     </tr>
     </thead>
@@ -24,7 +25,8 @@
         <td><img th:src="'/images/' + ${movie.imageName}"></td>
         <td class="movieTitle" th:text="${movie.title}"></td>
         <td th:text="${movie.genre.displayGenre}"></td>
-        <td th:text="${movie.price}"></td>
+        <td th:text="${movie.price} + ' kr'"></td>
+        <td th:text="${movie.release}"></td>
         <td th:text="${movie.description}"></td>
 
         <td>

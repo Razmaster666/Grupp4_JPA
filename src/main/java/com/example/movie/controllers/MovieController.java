@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RequestMapping("/movies")
@@ -33,6 +34,7 @@ public class MovieController {
         boolean helper = true;
         String pageTitle = "På bio just nu";
         List<Movie> movieList;
+        LocalDate today = LocalDate.now();
 
         // PÅ BIO JUST NU
         if(isCurrent && sortBy == null){
@@ -83,6 +85,7 @@ public class MovieController {
         model.addAttribute("movieList", movieList);
         model.addAttribute("pageTitle", pageTitle);
         model.addAttribute("helper", helper);
+        model.addAttribute("today", today);
 
         return "movies";
     }

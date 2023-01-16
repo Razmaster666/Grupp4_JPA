@@ -1,10 +1,14 @@
 package com.example.movie.repositories;
 
 import com.example.movie.models.Purchase;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 public interface PurchaseRepository extends CrudRepository<Purchase, Long> {
 
-
+    @Query(value = "SELECT SUM (MOVIE.PRICE) FROM PURCHASE\n" +
+            "JOIN MOVIE\n" +
+            "ON MOVIE.ID = PURCHASE.MOVIE_ID", nativeQuery = true)
+    Integer getTotal();
 
 }

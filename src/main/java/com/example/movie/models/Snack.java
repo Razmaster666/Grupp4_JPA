@@ -20,15 +20,19 @@ public class Snack {
     @Column(name = "DESCRIPTION")
     private String description;
 
+    @OneToMany(mappedBy = "snack", cascade = CascadeType.ALL)
+    private List<Purchase> purchaseList = new ArrayList<>();
+
     public Snack() {
     }
 
-    public Snack(Long id, String name, String imageName, String description, double price) {
+    public Snack(Long id, String name, String imageName, double price, String description, List<Purchase> purchaseList) {
         this.id = id;
         this.name = name;
         this.imageName = imageName;
-        this.description = description;
         this.price = price;
+        this.description = description;
+        this.purchaseList = purchaseList;
     }
 
     public Long getId() {
@@ -69,5 +73,13 @@ public class Snack {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<Purchase> getPurchaseList() {
+        return purchaseList;
+    }
+
+    public void setPurchaseList(List<Purchase> purchaseList) {
+        this.purchaseList = purchaseList;
     }
 }

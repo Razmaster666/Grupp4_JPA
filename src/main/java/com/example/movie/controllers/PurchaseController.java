@@ -17,6 +17,7 @@ import java.util.List;
 @Controller
 public class PurchaseController {
 
+
     @Autowired
     PurchaseRepository purchaseRepository;
     @Autowired
@@ -27,7 +28,9 @@ public class PurchaseController {
     @GetMapping("")
     public String getAllPurchases(Model model){
         List<Purchase> purchaseList= (List<Purchase>) purchaseRepository.findAll();
+        Integer total = purchaseRepository.getTotal();
         model.addAttribute("purchaseList", purchaseList);
+        model.addAttribute("total", total);
         return "purchases";
     }
 
@@ -48,9 +51,6 @@ public class PurchaseController {
         }
         return "purchases";
     }
-
-
-
 
 
 //    @GetMapping("/buy")

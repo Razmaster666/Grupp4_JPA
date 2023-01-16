@@ -55,4 +55,8 @@ public class Purchase {
     public void setSnack(Snack snack) {
         this.snack = snack;
     }
+
+
+
+
 }

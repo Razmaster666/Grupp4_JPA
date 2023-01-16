@@ -15,6 +15,8 @@ INSERT INTO MOVIE (TITLE, IMAGE_NAME, GENRE, PRICE, DESCRIPTION, RELEASE) VALUES
 INSERT INTO SNACK (NAME, IMAGE_NAME, PRICE, DESCRIPTION) VALUES ('Djungelvrål', 'djungelvrål.jpg', 15.99, 'Vrålsalta lakritsdjur har varit en av Malacos favorit hos många godisälskare. Passar dig som älskar extra salt salmiak.')
 INSERT INTO SNACK (NAME, IMAGE_NAME, PRICE, DESCRIPTION) VALUES ('Popcorn', 'popcorn.jpg', 29.99, 'Våra popcorn är gjorda på en majssort som kallas för Butterfly. Popcornmajset har fått sitt namn efter hur de ser ut när de är poppade.')
 INSERT INTO SNACK (NAME, IMAGE_NAME, PRICE, DESCRIPTION) VALUES ('Chips', 'chips.jpg', 19.99, 'Saltade Potatischips är släta chips med lätt och härlig sälta som lyfter den goda potatisen till skyarna. De klassiska tunna chipsen är extra krispiga samtidigt som de nästan smälter i munnen.')
+INSERT INTO SNACK (NAME, IMAGE_NAME, PRICE, DESCRIPTION) VALUES ('kexchoklad', 'kexchoklad.png', 15.99, 'Kexchoklad original innehåller 60 g av den frasiga chokladen som har ett ljust täcke av mjölkchoklad. Den är lika god att äta oavsett om det är vår, sommar, höst eller vinter. ')
+INSERT INTO SNACK (NAME, IMAGE_NAME, PRICE, DESCRIPTION) VALUES ('daim-bites', 'daimbites.png', 24.99, 'Marabou Daim Bites - En riktig klassiker: krispig mandelknäck överdragen med härlig mjölkchoklad, formad i små mumsbitar!')
 
 INSERT INTO PURCHASE (MOVIE_ID) VALUES (4)
 INSERT INTO PURCHASE (MOVIE_ID) VALUES (4)

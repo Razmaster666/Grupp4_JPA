@@ -14,7 +14,7 @@
     <thead>
     <tr>
         <th>Purchase ID</th>
-        <th>Customer Name</th>
+        <th>Produkter</th>
         <th>Customer ID</th>
         <th>Movie Title</th>
         <th>Movie ID</th>
@@ -25,11 +25,21 @@
     <tbody>
     <tr th:each="purchase : ${purchaseList}">
         <td th:text="${purchase.id}"></td>
-        <td th:text="${purchase.movie.title}"></td>
-        <td th:text="${purchase.movie.id}"></td>
+
+        <td th:if="${purchase.movie != null}">
+            <span th:text="${purchase.movie.title}"></span>
+            <span th:text="${purchase.movie.id}"></span>
+        </td>
+
+        <td th:if="${purchase.snack != null}">
+            <span th:text="${purchase.snack.name}"></span>
+            <span th:text="${purchase.snack.id}"></span>
+        </td>
     </tr>
-    <a th:href="'/homePage'"><button class="startSida">Startsida</button></a>
+
     </tbody>
 </table>
-
+<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+    <a th:href="'/homePage'"><button>Startsida</button></a>
+</div>
 </body>

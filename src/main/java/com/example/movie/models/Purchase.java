@@ -1,5 +1,7 @@
 package com.example.movie.models;
 
+import com.example.movie.controllers.PurchaseController;
+
 import javax.persistence.*;
 
 @Entity
@@ -15,13 +17,24 @@ public class Purchase {
     @ManyToOne
     private Movie movie;
 
+    @ManyToOne
+    private Snack snack;
+
+
     public Purchase() {
     }
 
-    public Purchase(Long id, Movie movie) {
+    public Purchase(Long id, Movie movie, Snack snack) {
         this.id = id;
         this.movie = movie;
+        this.snack = snack;
+
     }
+
+    public Snack getSnack() {
+        return snack;
+    }
+
 
     public Long getId() {
         return id;
@@ -37,5 +50,9 @@ public class Purchase {
 
     public void setMovie(Movie movie) {
         this.movie = movie;
+    }
+
+    public void setSnack(Snack snack) {
+        this.snack = snack;
     }
 }

@@ -27,7 +27,7 @@
         <td th:text="${snack.description}"></td>
 
         <td>
-            <a th:href="'/purchases/addToCart/?id=' + ${snack.id}"><button type="button" class="btn btn-success">Köp snack</button></a>
+            <a th:href="'/purchases/addToCart/?type=snack&id=' + ${snack.id}"><button type="button" class="btn btn-success">Köp snack</button></a>
         </td>
     </tr>
     </tbody>

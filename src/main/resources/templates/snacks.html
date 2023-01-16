@@ -14,6 +14,7 @@
         <th scope="col">Product</th>
         <th scope="col">Price</th>
         <th scope="col">Description</th>
+        <th></th>
 
     </tr>
     </thead>
@@ -24,10 +25,14 @@
         <td th:text="${snack.name}"></td>
         <td th:text="${snack.price}"></td>
         <td th:text="${snack.description}"></td>
+
+        <td>
+            <a th:href="'/purchases/addToCart/?id=' + ${snack.id}"><button type="button" class="btn btn-success">Köp snack</button></a>
+        </td>
     </tr>
     </tbody>
 </table>
 <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-    <a th:href="'/'"><button class="startSida">Startsida</button></a>
+    <a th:href="'/homePage'"><button class="startSida">Startsida</button></a>
 </div>
 </body>

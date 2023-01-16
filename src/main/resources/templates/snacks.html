@@ -21,7 +21,7 @@
 
     <tbody>
     <tr scope ="row" th:each="snack : ${snackList}">
-        <td><img th:src="'/images/' + ${snack.imageName}"></td>
+        <td><a th:href="'/snacks/'+ ${snack.id}"><img th:src="'/images/' + ${snack.imageName}"></a></td>
         <td th:text="${snack.name}"></td>
         <td th:text="${snack.price}"></td>
         <td th:text="${snack.description}"></td>

@@ -8,7 +8,7 @@ INSERT INTO MOVIE (TITLE, IMAGE_NAME, GENRE, PRICE, DESCRIPTION, RELEASE) VALUES
 INSERT INTO MOVIE (TITLE, IMAGE_NAME, GENRE, PRICE, DESCRIPTION, RELEASE) VALUES ('Bullet Train', 'bullettrain.jpg', 'ACTION', 159, 'Fem lönnmördare som befinner sig på ett snabbgående tåg upptäcker att deras respektive uppdrag har något gemensamt.', DATE '2022-08-05')
 INSERT INTO MOVIE (TITLE, IMAGE_NAME, GENRE, PRICE, DESCRIPTION, RELEASE) VALUES ('Na twoim miejscu', 'natwoim.jpg', 'COMEDY', 159, 'Ett par tillbringar varje dag på samma sätt - de bråkar ända till morgonen då de måste jobba tillsammans. Och allt på grund av... att de bytt kropp.', DATE '2023-01-13')
 INSERT INTO MOVIE (TITLE, IMAGE_NAME, GENRE, PRICE, DESCRIPTION, RELEASE) VALUES ('DC League of Super-Pets', 'superpets.jpg', 'CHILDREN', 159, 'De bästa vännerna har samma superkrafter och bekämpar brott sida vid sida i staden Metropolis.', DATE '2022-08-29')
-INSERT INTO MOVIE (TITLE, IMAGE_NAME, GENRE, PRICE, DESCRIPTION, RELEASE) VALUES ('UFO Sweden', 'ufosweden.jpg', 'SCIFI', 159, 'UFO Sweden är en förening som utreder övernaturliga fenomen. En dag dyker tonårsrebellen Denise upp med ett fall som inte liknar något de sett tidigare.', DATE '2023-01-15')
+INSERT INTO MOVIE (TITLE, IMAGE_NAME, GENRE, PRICE, DESCRIPTION, RELEASE) VALUES ('UFO Sweden', 'ufosweden.jpg', 'SCIFI', 159, 'UFO Sweden är en förening som utreder övernaturliga fenomen. En dag dyker tonårsrebellen Denise upp med ett fall som inte liknar något de sett tidigare.', DATE '2023-01-16')
 INSERT INTO MOVIE (TITLE, IMAGE_NAME, GENRE, PRICE, DESCRIPTION, RELEASE) VALUES ('The Estate', 'theestate.jpg', 'COMEDY', 159, 'Macey och Savanna kanske inte har så mycket, förutom den perfekta planen.', DATE '2023-01-20')
 INSERT INTO MOVIE (TITLE, IMAGE_NAME, GENRE, PRICE, DESCRIPTION, RELEASE) VALUES ('65', '65.jpg', 'SCIFI', 159, 'Efter en kraschlandning på en okänd planet upptäcker piloten Mills att han är strandsatt på jorden för 65 miljoner år sedan.', DATE '2023-05-10')
 
@@ -16,7 +16,7 @@ INSERT INTO SNACK (NAME, IMAGE_NAME, PRICE, DESCRIPTION) VALUES ('Djungelvrål',
 INSERT INTO SNACK (NAME, IMAGE_NAME, PRICE, DESCRIPTION) VALUES ('Popcorn', 'popcorn.jpg', 29.99, 'Våra popcorn är gjorda på en majssort som kallas för Butterfly. Popcornmajset har fått sitt namn efter hur de ser ut när de är poppade.')
 INSERT INTO SNACK (NAME, IMAGE_NAME, PRICE, DESCRIPTION) VALUES ('Chips', 'chips.jpg', 19.99, 'Saltade Potatischips är släta chips med lätt och härlig sälta som lyfter den goda potatisen till skyarna. De klassiska tunna chipsen är extra krispiga samtidigt som de nästan smälter i munnen.')
 
-INSERT INTO PURCHASE (MOVIE_ID) VALUES (4)
-INSERT INTO PURCHASE (MOVIE_ID) VALUES (4)
-INSERT INTO PURCHASE (MOVIE_ID) VALUES (1)
+--INSERT INTO PURCHASE (MOVIE_ID) VALUES (4)
+--INSERT INTO PURCHASE (MOVIE_ID) VALUES (4)
+--INSERT INTO PURCHASE (MOVIE_ID) VALUES (1)
 

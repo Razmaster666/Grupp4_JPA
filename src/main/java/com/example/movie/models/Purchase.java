@@ -15,12 +15,16 @@ public class Purchase {
     @ManyToOne
     private Movie movie;
 
+    @ManyToOne
+    private Snack snack;
+
     public Purchase() {
     }
 
-    public Purchase(Long id, Movie movie) {
+    public Purchase(Long id, Movie movie, Snack snack) {
         this.id = id;
         this.movie = movie;
+        this.snack = snack;
     }
 
     public Long getId() {
@@ -37,5 +41,13 @@ public class Purchase {
 
     public void setMovie(Movie movie) {
         this.movie = movie;
+    }
+
+    public Snack getSnack() {
+        return snack;
+    }
+
+    public void setSnack(Snack snack) {
+        this.snack = snack;
     }
 }

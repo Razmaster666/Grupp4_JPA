@@ -5,9 +5,11 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<h2 class="tableTitle">Purchases</h2>
+<h2 class="tableTitle">Varukorg</h2>
 
-<table class="table table-striped table-dark align-middle container">
+<p th:unless="${purchaseList} and ${purchaseList.size()}">Varukorgen är tom :(</p>
+
+<table th:if="${purchaseList} and ${purchaseList.size()}" class="table table-striped table-dark align-middle container">
 
     <p th:text="${total}"></p>
 
@@ -16,15 +18,16 @@
         <th>Purchase ID</th>
         <th>Movie Title</th>
         <th>Movie ID</th>
-
     </tr>
     </thead>
 
     <tbody>
-    <tr th:each="purchase : ${purchaseList}">
-        <td th:text="${purchase.id}"></td>
-        <td th:text="${purchase.movie.title}"></td>
-        <td th:text="${purchase.movie.id}"></td>
+    <tr  th:each="purchase : ${purchaseList}">
+
+        <td th:if="${purchase.id != null}"  th:text="${purchase.id}"></td>
+        <td th:if="${purchase.movie.title != null}"  th:text="${purchase.movie.title}"></td>
+        <td th:if="${purchase.movie.title != null}"  th:text="${purchase.movie.id}"></td>
+
     </tr>
     <a th:href="'/homePage'"><button class="startSida">Startsida</button></a>
     </tbody>

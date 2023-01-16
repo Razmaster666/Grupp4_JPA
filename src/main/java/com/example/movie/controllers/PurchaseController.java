@@ -17,7 +17,6 @@ import java.util.List;
 @Controller
 public class PurchaseController {
 
-
     @Autowired
     PurchaseRepository purchaseRepository;
     @Autowired
@@ -28,9 +27,21 @@ public class PurchaseController {
     @GetMapping("")
     public String getAllPurchases(Model model){
         List<Purchase> purchaseList= (List<Purchase>) purchaseRepository.findAll();
-        Integer total = purchaseRepository.getTotal();
-        model.addAttribute("purchaseList", purchaseList);
+
+        Double total = 0.0;
+        Double movieSum = purchaseRepository.getSumMovie();
+        Double snackSum = purchaseRepository.getSumSnack();
+
+        if(movieSum != null){
+            total += movieSum;
+        }
+        if(snackSum != null){
+            total += snackSum;
+        }
+
         model.addAttribute("total", total);
+        model.addAttribute("purchaseList", purchaseList);
+
         return "purchases";
     }
 
@@ -52,19 +63,4 @@ public class PurchaseController {
         return "purchases";
     }
 
-
-//    @GetMapping("/buy")
-//    public String test(Model model) {
-//        model.addAttribute("movie", new Movie());
-//        model.addAttribute("purchase", new Purchase());
-//        return "buy";
-//    }
-//
-//    @PostMapping("/buy")
-//    public String test2(@ModelAttribute Purchase purchase, @RequestParam(value="id") Long id) {
-//        Movie movie = movieRepository.findById(id).get();
-//        purchase.setMovie(movie);
-//        purchaseRepository.save(purchase);
-//        return "buy";
-//    }
 }

@@ -26,7 +26,9 @@ public class PurchaseController {
     @GetMapping("")
     public String getAllPurchases(Model model){
         List<Purchase> purchaseList= (List<Purchase>) purchaseRepository.findAll();
+        Integer total = purchaseRepository.getTotal();
         model.addAttribute("purchaseList", purchaseList);
+        model.addAttribute("total", total);
         return "purchases";
     }
 
@@ -38,20 +40,4 @@ public class PurchaseController {
         purchaseRepository.save(purchase);
         return "redirect:/purchases";
     }
-
-
-//    @GetMapping("/buy")
-//    public String test(Model model) {
-//        model.addAttribute("movie", new Movie());
-//        model.addAttribute("purchase", new Purchase());
-//        return "buy";
-//    }
-//
-//    @PostMapping("/buy")
-//    public String test2(@ModelAttribute Purchase purchase, @RequestParam(value="id") Long id) {
-//        Movie movie = movieRepository.findById(id).get();
-//        purchase.setMovie(movie);
-//        purchaseRepository.save(purchase);
-//        return "buy";
-//    }
 }

@@ -1,13 +1,14 @@
 package com.example.movie.controllers;
 
-import com.example.movie.models.Customer;
 import com.example.movie.models.Movie;
-import com.example.movie.repositories.CustomerRepository;
 import com.example.movie.repositories.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -17,8 +18,8 @@ public class MovieController {
 
     @Autowired
     MovieRepository movieRepository;
-    @Autowired
-    CustomerRepository customerRepository;
+//    @Autowired
+//    CustomerRepository customerRepository;
 
     // ShoppingCart till ArrayList. Leva i minnet till en http session.
     // ShoppingCart måste vara specifik för varje användare.
@@ -93,11 +94,11 @@ public class MovieController {
         return "detailsMovie";
     }
 
-    @ModelAttribute
-    public void findCurrentCustomer(Model model, Customer currentCustomer) {
-        currentCustomer = customerRepository.findById(1L).get();
-        model.addAttribute("currentCustomer", currentCustomer);
-    }
+//    @ModelAttribute
+//    public void findCurrentCustomer(Model model, Customer currentCustomer) {
+//        currentCustomer = customerRepository.findById(1L).get();
+//        model.addAttribute("currentCustomer", currentCustomer);
+//    }
 
 
 

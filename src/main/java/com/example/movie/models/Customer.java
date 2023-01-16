@@ -7,7 +7,7 @@ import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+//@Entity
 public class Customer {
 
     @Id

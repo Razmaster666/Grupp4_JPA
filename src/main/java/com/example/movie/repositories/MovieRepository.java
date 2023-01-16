@@ -18,13 +18,13 @@ public interface MovieRepository extends CrudRepository<Movie, Long> {
     @Query(value = "SELECT * FROM MOVIE WHERE RELEASE > CURRENT_DATE AND GENRE = ?1", nativeQuery = true)
     List<Movie> getUpcomingMoviesByGenre(String genre);
 
-//    @Query(value = "SELECT e FROM MOVIE e WHERE e.release > CURRENT_DATE")
-//    List<Movie> getUpcomingMovies();
-
     @Query(value = "SELECT * FROM MOVIE WHERE RELEASE > CURRENT_DATE", nativeQuery = true)
     List<Movie> getUpcomingMovies();
 
     @Query(value = "SELECT * FROM MOVIE WHERE RELEASE <= CURRENT_DATE", nativeQuery = true)
     List<Movie> getCurrentMovies();
+
+    //Jdbc kanske
+    //Ny class CountMovie. Id och antal.
 
 }

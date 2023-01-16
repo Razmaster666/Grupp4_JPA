@@ -9,8 +9,8 @@ public class Purchase {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    private Customer customer;
+//    @ManyToOne
+//    private Customer customer;
 
     @ManyToOne
     private Movie movie;
@@ -18,16 +18,10 @@ public class Purchase {
     public Purchase() {
     }
 
-    public Purchase(Movie movie) {
-        this.movie = movie;
-    }
-
-    public Purchase(Long id, Customer customer, Movie movie) {
+    public Purchase(Long id, Movie movie) {
         this.id = id;
-        this.customer = customer;
         this.movie = movie;
     }
-
 
     public Long getId() {
         return id;
@@ -35,14 +29,6 @@ public class Purchase {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
     }
 
     public Movie getMovie() {

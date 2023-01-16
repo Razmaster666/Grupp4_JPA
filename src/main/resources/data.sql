@@ -12,12 +12,9 @@ INSERT INTO MOVIE (TITLE, IMAGE_NAME, GENRE, PRICE, DESCRIPTION, RELEASE) VALUES
 INSERT INTO MOVIE (TITLE, IMAGE_NAME, GENRE, PRICE, DESCRIPTION, RELEASE) VALUES ('The Estate', 'theestate.jpg', 'COMEDY', 159, 'Macey och Savanna kanske inte har så mycket, förutom den perfekta planen.', DATE '2023-01-20')
 INSERT INTO MOVIE (TITLE, IMAGE_NAME, GENRE, PRICE, DESCRIPTION, RELEASE) VALUES ('65', '65.jpg', 'SCIFI', 159, 'Efter en kraschlandning på en okänd planet upptäcker piloten Mills att han är strandsatt på jorden för 65 miljoner år sedan.', DATE '2023-05-10')
 
-
 INSERT INTO SNACK (NAME, IMAGE_NAME, PRICE, DESCRIPTION) VALUES ('Djungelvrål', 'djungelvrål.jpg', 15.99, 'Vrålsalta lakritsdjur har varit en av Malacos favorit hos många godisälskare. Passar dig som älskar extra salt salmiak.')
 INSERT INTO SNACK (NAME, IMAGE_NAME, PRICE, DESCRIPTION) VALUES ('Popcorn', 'popcorn.jpg', 29.99, 'Våra popcorn är gjorda på en majssort som kallas för Butterfly. Popcornmajset har fått sitt namn efter hur de ser ut när de är poppade.')
 INSERT INTO SNACK (NAME, IMAGE_NAME, PRICE, DESCRIPTION) VALUES ('Chips', 'chips.jpg', 19.99, 'Saltade Potatischips är släta chips med lätt och härlig sälta som lyfter den goda potatisen till skyarna. De klassiska tunna chipsen är extra krispiga samtidigt som de nästan smälter i munnen.')
-
-INSERT INTO CUSTOMER (FIRST_NAME, LAST_NAME, EMAIL) VALUES ('Robert', 'Broberg', 'robert.broberg@gmail.com')
 
 INSERT INTO PURCHASE (MOVIE_ID) VALUES (4)
 INSERT INTO PURCHASE (MOVIE_ID) VALUES (4)

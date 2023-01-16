@@ -53,13 +53,12 @@
         <td th:text="${movie.length}"></td>
         <td th:text="${movie.release}"></td>
 
-
         <td>
 <!--            <form action="purchases/addToCart" th:value="${movie}" method="POST">-->
 <!--            </form>-->
-                <a href=""><button type="button" class="btn btn-success">Köp biljett</button></a>
-
+                <a th:href="'/purchases/addToCart/?id=' + ${movie.id}"><button type="button" class="btn btn-success">Köp biljett</button></a>
         </td>
+
     </tr>
     </tbody>
 

@@ -25,7 +25,7 @@ public class Movie {
     @Column(name = "DESCRIPTION")
     private String description;
     @Column(name = "MOVIE_LENGTH")
-    private LocalTime length;
+    private LocalTime length; // ändra tillbaka till String
     @Column(name="RELEASE")
     private LocalDate release;
 
